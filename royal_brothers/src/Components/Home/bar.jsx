@@ -1,6 +1,6 @@
 export const Bar=()=>{
     return(
-    <div style={{width:"50px",height:"3px",backgroundColor:"#FDB605",margin:"auto",marginTop:"1px"}}>
+    <div style={{width:"45px",height:"3.5px",backgroundColor:"#fed250",margin:"auto",marginTop:"1px"}}>
     </div>
     )
 }
