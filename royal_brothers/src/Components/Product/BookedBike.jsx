@@ -80,9 +80,18 @@ export const BookedBike = (props) => {
         <div className="imbikes">
           {" "}
           <img
-            src={bikeDetails.image}
+            src={
+              bikeDetails.name === "Yamaha FZ-s"
+                ? "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSncG3rbjArAgHWVEz_jEK5gD9FuQLe4p9Fjw&usqp=CAU"
+                : bikeDetails.image
+            }
             alt=""
-            width={bikeDetails.name === "Pulsar" ? "80%" : "auto%"}
+            width={
+              bikeDetails.name === "Pulsar" ||
+              bikeDetails.name === "Yamaha FZ-s"
+                ? "80%"
+                : "auto%"
+            }
           />{" "}
         </div>
         <br />
@@ -95,19 +104,19 @@ export const BookedBike = (props) => {
                   </select> } */}
         <div className="timingbike">
           <div>
-            <p className="arrivetime" style={{fontSize:"11px"}}>
+            <p className="arrivetime" style={{ fontSize: "11px" }}>
               {convertDateTime(bikeScheduleDetails.pickUpTime)}
             </p>
-            <p className="arrivetime" style={{fontSize:"11px"}}>
+            <p className="arrivetime" style={{ fontSize: "11px" }}>
               {new Date(bikeScheduleDetails.pickUpDate).toDateString()}
             </p>
           </div>
           <div className="timingTo">to</div>
           <div>
-            <p className="arrivetime" style={{fontSize:"11px"}}>
+            <p className="arrivetime" style={{ fontSize: "11px" }}>
               {convertDateTime(bikeScheduleDetails.dropOffTime)}
             </p>
-            <p className="arrivetime" style={{fontSize:"11px"}}>
+            <p className="arrivetime" style={{ fontSize: "11px" }}>
               {new Date(bikeScheduleDetails.dropOffDate).toDateString()}
             </p>
           </div>

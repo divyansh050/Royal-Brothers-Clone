@@ -4,24 +4,20 @@ import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import { SchedulePopUp } from "../popUp/SchedulePopUp";
 
-export const BikeCard = ({
- item
-}) => {
-
+export const BikeCard = ({ item }) => {
   const {
-  name,
-  image,
-  location,
-  kilometer_limit,
-  hourly_rate,
-  pickUpTime,
-  pickUpDate,
-  dropOffDate,
-  dropOffTime,
-  _id,
-} = item;
+    name,
+    image,
+    location,
+    kilometer_limit,
+    hourly_rate,
+    pickUpTime,
+    pickUpDate,
+    dropOffDate,
+    dropOffTime,
+    _id,
+  } = item;
 
-  
   const [alignment, setAlignment] = React.useState("hourly");
 
   const [isAvailable, setIsAvailable] = React.useState(
@@ -99,7 +95,15 @@ export const BikeCard = ({
       <div>
         <div style={{ padding: "10px" }}>
           <h4 style={{ color: "black", paddingBottom: "10px" }}>{name}</h4>
-          <img src={image} alt="" width={name === "Pulsar" ? "70%" : "80%"} />
+          <img
+            src={
+              name === "Yamaha FZ-s"
+                ? "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSncG3rbjArAgHWVEz_jEK5gD9FuQLe4p9Fjw&usqp=CAU"
+                : image
+            }
+            alt=""
+            width={name === "Pulsar"  ? "70%" : name === "Yamaha FZ-s" ? "66%" : "80%"}
+          />
         </div>
         {/*  */}
         <ToggleButtonGroup
@@ -204,7 +208,7 @@ export const BikeCard = ({
           )}
         </div>
 
-        <SchedulePopUp isAvailable={isAvailable} item={item}/>
+        <SchedulePopUp isAvailable={isAvailable} item={item} />
       </div>
     </>
   );

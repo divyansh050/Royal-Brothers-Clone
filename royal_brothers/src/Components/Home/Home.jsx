@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { Bar } from "./bar";
  import {Caro1}  from "./carousel/Carousel1";
 // import  Caro2  from "./carousel/Caraousel2";
-import { Gallery } from "./carousel/car2";
+// import { Gallery } from "./carousel/car2";
 
 export const Home = () => {
   // const [bikes, setBikes] = useState([]);
@@ -160,7 +160,9 @@ export const Home = () => {
           {/* <Caro2/> */}
         </div>
       </div>
-      <Gallery />
+      {/* <Gallery /> */}
     </div>
   );
 };
+
+
