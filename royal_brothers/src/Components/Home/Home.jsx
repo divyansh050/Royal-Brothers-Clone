@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import image1 from "./image/homeImg.png";
+import image1 from "./image/homeImage.png";
 import "./Home.css";
 import { Link } from "react-router-dom";
 import { Bar } from "./bar";
@@ -20,20 +20,20 @@ export const Home = () => {
   localStorage.setItem("dtime", JSON.stringify(selectedDTime));
   return (
     <div style={{width:"100%"}}>
-      <img src={image1} className="image1" alt="" />
+      <img src={image1} className="image1" alt=""/>
       <div className="inputBox">
         <h2 className="search">Search your next ride</h2>
         <h4 className="pickup">Pickup</h4>
         <div className="drop_div">
           <input
-            className="input_box"
+            className="input_box date"
             type="date"
             placeholder="Date"
             onChange={(d) => setSelectedDate(d.target.value)}
             selected={selectedDate}
           />
           <input
-            className="input_box"
+            className="input_box date1"
             type="time"
             placeholder="time"
             onChange={(d) => setSelectedTime(d.target.value)}
@@ -43,28 +43,28 @@ export const Home = () => {
         <h4 className="pickup">Dropoff</h4>
         <div className="drop_div">
           <input
-            className="input_box"
+            className="input_box date"
             type="date"
             onChange={(d) => setSelectedDDate(d.target.value)}
             selected={selectedDDate}
           />
           <input
-            className="input_box"
+            className="input_box date1"
             type="time"
             onChange={(d) => setSelectedDTime(d.target.value)}
             selected={selectedDTime}
           />
         </div>
-          <Link className="linktag" to="/product" >
+          <Link className="linktag" to="/tariff" >
         <button className="search_button">
         Search
         </button>
             </Link>
       </div>
+
       <div className="info">
         <div className="info_div">
         <img
-          style={{ height: "37px" }}
           src="https://d36g7qg6pk2cm7.cloudfront.net/assets/redesign/feature_tag_sanitized-a37325c03fb50fd9b2783d574ba67c40cb7b8a90d5951a85f72095904943e1d6.png"
           alt="img"
         ></img>
@@ -72,10 +72,9 @@ export const Home = () => {
           Sanitized Vehicles
         </h6 >
         </div>
-       <div className="info_div">
 
+       <div className="info_div">
         <img
-          style={{ height: "37px" }}
           src="https://d36g7qg6pk2cm7.cloudfront.net/assets/redesign/feature_tag_insurance-84ee18a118bee4cfc4f774e0dbdb5d24431af458eb583d5d1c5822801e388764.png"
           alt="img"
         ></img>
@@ -83,21 +82,19 @@ export const Home = () => {
           Vehicle Insuarence
         </h6 >
        </div>
-       <div className="info_div">
 
+       <div className="info_div">
         <img
-          style={{ height: "37px" }}
           src="https://d36g7qg6pk2cm7.cloudfront.net/assets/redesign/feature_tag_assistance-ec66ebeeb0ebb01468fc1729165040e172820de83d5037cf47a73f4e19177d68.png"
           alt="img"
         ></img>
-        <h6 className="benefits" >
+        <h6 className="diff">
           24/7 Roadside Assistance
         </h6 >
        </div>
-        <div className="info_div">
 
+        <div className="info_div">
         <img
-          style={{ height: "37px" }}
           src="https://d36g7qg6pk2cm7.cloudfront.net/assets/redesign/feature_tag_maintainence-4ac25e7eb9ad6f8b78ec52640a7310d8083a21823e1fb54ca9872076c2bc5f34.png"
           alt="img"
         ></img>
@@ -106,10 +103,12 @@ export const Home = () => {
         </h6 >
         </div>
       </div>
-      <div>
 
-      <img className="image2" src="https://d36g7qg6pk2cm7.cloudfront.net/assets/long_term/RBX_carousel_one-5e5beb3711f8184ba280e0791b058b8b1b4f03cad772f10b0ab39adfc5d06ec5.jpg" alt="" />
+      <div style={{width: '100%', height: '520px'}}>
+
+      <img src="https://d36g7qg6pk2cm7.cloudfront.net/assets/long_term/RBX_carousel_one-2f5f86ebeaec92ae789b22943db636cf309810083a9f6cdca1b5d06e520fdc04.jpg" alt="err" width="100%" height="100%"/>
       </div>
+
       <div className="our_fleet">
         <h3>
           OUR FLEET
@@ -117,35 +116,36 @@ export const Home = () => {
         <Bar />
       </div>
       <div className="bikes">
-        <div>
-          <h3>Honda Activa</h3>
-          <img src="https://d3vp2rl7047vsp.cloudfront.net/bike_models/images/000/000/002/medium/Activa_3G-min_2.png?1519738389" alt="" />
-          <hr />
-          <h3>₹19/hour</h3>
-          <button>BOOK NOW</button>
-        </div>
-        <div>
-          <h3>Honda Dio</h3>
+        <div style={{backgroundColor:"#f7fafc"}}>
+          <h3 className="head1" >Honda Dio</h3>
           <img src="https://d3vp2rl7047vsp.cloudfront.net/bike_models/images/000/000/035/medium/Dio-min_2.png?1519738819" alt="" />
           <hr />
-          <h3>₹25/hour</h3>
-          <button>BOOK NOW</button>
+          <h3 className="rupee">₹25/hour</h3>
+          <Link className="linktag" to="/tariff" ><button>BOOK NOW</button></Link>
         </div>
-        <div>
-          <h3 className="honda-x-blade">Honda X Blade</h3>
+        <div style={{backgroundColor:"#f7fafc"}}>
+          <h3 className="head1" >Honda Activa</h3>
+          <img src="https://d3vp2rl7047vsp.cloudfront.net/bike_models/images/000/000/002/medium/Activa_3G-min_2.png?1519738389" alt="" />
+          <hr />
+          <h3 className="rupee">₹19/hour</h3>
+          <Link className="linktag" to="/tariff" ><button>BOOK NOW</button></Link>
+        </div>
+        <div style={{backgroundColor:"#f7fafc"}}>
+          <h3 className="head1" >Honda X Blade</h3>
           <img src="https://d3vp2rl7047vsp.cloudfront.net/bike_models/images/000/000/321/medium/p250n.jpg?1642421263" alt="" />
           <hr />
-          <h3 className="honda-x-blade">₹39/hour</h3>
-          <button>BOOK NOW</button>
+          <h3 className="rupee">₹39/hour</h3>
+          <Link className="linktag" to="/tariff" ><button>BOOK NOW</button></Link>
         </div>
-        <div>
-          <h3>Royal Enfield Classic 350</h3>
+        <div style={{backgroundColor:"#f7fafc"}}>
+          <h3 className="head1" >Royal Enfield Classic 350</h3>
           <img src="https://d3vp2rl7047vsp.cloudfront.net/bike_models/images/000/000/007/medium/Classic_350-1-min_2.png?1519738687" alt="" />
           <hr />
-          <h3>₹49/hour</h3>
-          <button>BOOK NOW</button>
+          <h3 className="rupee">₹49/hour</h3>
+          <Link className="linktag" to="/tariff" ><button>BOOK NOW</button></Link>
         </div>
       </div>
+
        <div className="car1_div">
 
      <Caro1 />
